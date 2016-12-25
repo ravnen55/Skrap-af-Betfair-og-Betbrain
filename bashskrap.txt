@@ -1,2 +1,3 @@
 echo 'hej hej'
-echo 'jeg har lavet en ændring'
+echo 'jeg har lavet en aendring'
+echo 'jeg har lavet en ny aendring'
