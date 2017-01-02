@@ -1,1 +1,1 @@
-curl 'http://www.betbrain.com/' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' --compressed -v > slet3.txt -v
+curl 'http://www.betbrain.com/' -H 'Uspgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' --compressed -v > slet3.txt 2>&1
