@@ -11,4 +11,4 @@ curl 'https://www.betbrain.com/premier-league' -H 'Accept-Encoding: gzip, deflat
 echo \
 curl 'https://www.betbrain.com/premier-league' -H 'Accept-Encoding: gzip, deflate, sdch, br' -H 'Accept-Language: da-DK,da;q=0.8,en-US;q=0.6,en;q=0.4' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 \
 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H \
-&smaakage2 -H 'Connection: keep-alive' --compressed >> perler.txt
+$smaakage2 -H 'Connection: keep-alive' --compressed >> perler.txt
