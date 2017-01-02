@@ -1,1 +1,0 @@
-refiners":{"indbosum":"200000","selvrisiko":"2000","svampinsekt":true,"raad":false,"roerstikledninger":false,"kosmetiskdaekning":false,"lejerskader":false,"elektronik":false,"udlejes":false}
