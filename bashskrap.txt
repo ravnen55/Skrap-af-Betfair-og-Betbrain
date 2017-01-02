@@ -1,7 +1,7 @@
 curl 'http://www.betbrain.com/' -H 'Uspgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' --compressed -v > out1.txt 2>&1
 smaakage1=$(grep -i cookie out1.txt | cut -f 3- -d " " | paste -d " ") 
 #visid _incappp
-smaakage2 = "Cookie: $smaakage1"
+smaakage2="Cookie: $smaakage1"
 #curl 'https://www.betbrain.com/premier-league' -H 'Accept-Encoding: gzip, deflate, sdch, br' -H 'Accept-Language: da-DK,da;q=0.8,en-US;q=0.6,en;q=0.4' -H 
 #'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' -H 
 #'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 
