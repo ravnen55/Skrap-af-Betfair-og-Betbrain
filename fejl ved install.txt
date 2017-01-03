@@ -1,0 +1,2 @@
+per@per-Virtual-Machine:~/go/src/github.com/ecsact/crawl$ go install github.com/ecsact/crawl/apps/scraper
+vendor/github.com/go-kit/kit/transport/http/client.go:8:2: no buildable Go source files in /home/per/go/src/github.com/ecsact/crawl/vendor/golang.org/x/net/context/ctxhttp
