@@ -1,4 +1,0 @@
-bashskrap.txt
-hej.txt
-README.md
-slet3.txt
