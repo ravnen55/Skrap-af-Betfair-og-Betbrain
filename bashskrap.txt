@@ -1,15 +1,21 @@
 curl 'http://www.betbrain.com/' -H 'Uspgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' --compressed -v > out1.txt 2>&1
-smaakage1=$(grep -i cookie out1.txt | cut -f 3- -d " " | paste -d " ") 
-#visid _incapp...
-smaakage2="'Cookie: $smaakage1'"
+#smaakage1=$(grep -i cookie out1.txt | cut -f 3- -d " " | paste -d " ") 
 
-echo \
-"curl 'https://www.betbrain.com/premier-league' -H 'Accept-Encoding: gzip, deflate, sdch, br' -H 'Accept-Language: da-DK,da;q=0.8,en-US;q=0.6,en;q=0.4' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 \
+grep -i cookie out1.txt >out2.txt 
+cut -f 3- -d " " out2.txt >out3.txt
+paste -d " " out3.txt >out4.txt
+
+grep -v "visid_incap" out4.txt>out5.txt
+grep -v "incap_ses" out4.txt>out6.txt
+
+smaakage3=$(grep -o -b "expires" out6.txt| grep -oE '[0-9]+:expires' | grep -oE '[0-9]+')
+smaakage4=$(grep -o -b "path" out5.txt| grep -oE '[0-9]+:path' | grep -oE '[0-9]+')
+smaakage5=$(cut -c 1-$((smaakage3-2))  out6.txt)
+smaakage6=$(cut -c 1-$((smaakage4-2))  out5.txt)
+
+
+curl 'https://www.betbrain.com/premier-league/' -H 'Accept-Encoding: gzip, deflate, sdch, br' -H 'Accept-Language: da-DK,da;q=0.8,en-US;q=0.6,en;q=0.4' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 \
 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H \
-'Cookie: visid_incap_915675=mryq9Am9T6SG5GlHRZu+ytwnalgAAAAAQUIPAAAAAADuo21CeeyWcNo3Z5JJOU9/; incap_ses_277_915675=M8Rtf3qKTmuUZ6ZvehrYA90nalgAAAAAgTRfk03aKuTnRUGpauTq9g==' -H 'Connection: keep-alive' --compressed" > perler.txt
+'Cookie: $smaakage5 $smaakage6' -H 'Connection: keep-alive' --compressed > step2.txt 2>&1 
 
-
-echo \
-"curl 'https://www.betbrain.com/premier-league' -H 'Accept-Encoding: gzip, deflate, sdch, br' -H 'Accept-Language: da-DK,da;q=0.8,en-US;q=0.6,en;q=0.4' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 \
-(Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H \
-$smaakage2 -H 'Connection: keep-alive' --compressed" >> perler.txt
+#-------------------------------------------------------------------------------------------------
